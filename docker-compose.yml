@@ -1,7 +1,7 @@
 version: '3'
 services:
   service:
-    build: ./app
+    build: ./movies
     container_name: service
     command: uwsgi --strict --ini /opt/app/uwsgi/uwsgi.ini
     volumes:
