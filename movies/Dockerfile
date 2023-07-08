@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.11.4-slim-bookworm
 
 WORKDIR /opt/app
 
@@ -10,7 +10,6 @@ COPY requirements.txt requirements.txt
 RUN apt-get update && apt-get install --no-install-recommends -y \
      gcc \
      libc6-dev \
-     netcat \
      \
      && pip install --no-cache-dir --upgrade pip \
      && pip install --no-cache-dir -r requirements.txt \
@@ -22,7 +21,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 
 COPY . .
 
-RUN mkdir -p staticfiles mediafiles \ 
+RUN mkdir -p staticfiles mediafiles \
      && groupadd -r web && useradd -d /opt/app -r -g web web \
      && chown web:web -R /opt/app
 
