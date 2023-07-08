@@ -13,13 +13,19 @@ services:
       - ./.env
       - ./.env.db
     depends_on:
-      - db
+      db:
+        condition: service_healthy
   db:
     image: postgres:13
     volumes:
       - postgres_data:/var/lib/postgresql/data
     env_file:
       - ./.env.db
+    healthcheck:
+      test: ["CMD-SHELL", "sh -c 'pg_isready -U app -d movies_database'"]
+      interval: 2s
+      timeout: 5s
+      retries: 120
   nginx:
     image: nginx:1.23.2
     volumes:
