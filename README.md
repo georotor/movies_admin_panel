@@ -1,5 +1,11 @@
 # Movies: Django админка для кинотеатра
 
+## Архитектура
+
+![Архитектура](https://github.com/georotor/movies_admin_panel/blob/main/docs/schema.png?raw=true)
+
+## Запуск сервиса
+
 Для запуска потребуется два файла с переменными окружения:
 
 - `.env` с настройками Django + uWSGI:
