@@ -2,7 +2,7 @@
 
 ## Архитектура
 
-![Архитектура](https://github.com/georotor/movies_admin_panel/blob/main/docs/schema.png?raw=true)
+![Архитектура](https://github.com/georotor/movies_admin_panel/blob/main/doc/schema.png?raw=true)
 
 ## Запуск сервиса
 
